@@ -1,15 +1,8 @@
 {
     "projects": [{
-            "id": "1",
-            "title": "New homepage banner",
-            "description": "Create new homepage banner",
-            "completed": false
-        },
-        {
-            "id": "2",
-            "title": "Marketing Email",
-            "description": "Create new marketing email",
-            "completed": true
-        }
-    ]
+        "id": "2",
+        "title": "Marketing Email",
+        "description": "Create new marketing email",
+        "completed": true
+    }]
 }

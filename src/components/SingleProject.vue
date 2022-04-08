@@ -4,8 +4,8 @@
           <h3 @click="toggleDetails"> {{ project.title }}</h3>
           <div class="icons">
               <span class="material-icons">edit</span>
-              <span class="material-icons">delete</span>
-              <span class="material-icons">done</span>
+              <span class="material-icons" @click="deleteProject">delete</span>
+              <span class="material-icons" @click="toggleComplete">done</span>
           </div>
       </div>
         <div class="description">
@@ -17,17 +17,29 @@
 
 <script>
 export default {
-    data() {
+props: ['project'],
+data() {
         return {
             showDetails: false,
+            uri: 'http://localhost:3000/projects/' + this.project.id
         }
     },
-props: ['project'],
 methods: {
-    // toggle paragraph visibility
+    // * toggle paragraph visibility
     toggleDetails() {
         this.showDetails = !this.showDetails;
-    }  
+    },
+    // ! delete project
+    deleteProject() {
+        fetch(this.uri, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            this.$emit('delete-project', this.project.id);
+        })
+        .catch(error => console.log(error))
+    }
 },
 }
 </script>
