@@ -1,8 +1,16 @@
 {
-    "projects": [{
-        "id": "2",
-        "title": "Marketing Email",
-        "description": "Create new marketing email",
-        "completed": true
-    }]
+  "projects": [
+    {
+      "id": "1",
+      "title": "Update website",
+      "description": "Create new updates for the website",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "Marketing Email",
+      "description": "Create new marketing email",
+      "completed": false
+    }
+  ]
 }
