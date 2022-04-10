@@ -3,7 +3,7 @@
       <label for="">Title</label>
       <input type="text" required v-model="title">
       <label for="">Details:</label>
-      <textarea required v-model="details"></textarea>
+      <textarea required v-model="description"></textarea>
       <button>Add project</button>
   </form>
 </template>
@@ -13,7 +13,7 @@ export default {
 data () {
     return {
         title: '',
-        details: ''
+        description: ''
     }
 },
 methods : {
@@ -25,7 +25,7 @@ methods : {
             },
             body: JSON.stringify({
                 title: this.title,
-                details: this.details,
+                description: this.description,
                 completed: false
             })
         })
